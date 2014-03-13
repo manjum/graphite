@@ -1,0 +1,9 @@
+<ul class="unstyled">
+	<li ng-repeat="result in results"><span>{{result.name}}</span></li>
+</ul>
+<ul>
+    <li style="float:right;" ng-repeat="(strength, subconnections) in connections"><span>Strength: {{strength}}</span>
+    <ul><li ng-repeat="subconnection in subconnections"><span ng-click="dialog(subconnection.id)">{{subconnection.name}}</span>
+    <div id="{{subconnection.id}}" style="display:none"><span>Routes:</span><br/><span ng-repeat="(index, route) in subconnection.routes">{{route}}</span></div>
+    </ul></li>
+</ul>

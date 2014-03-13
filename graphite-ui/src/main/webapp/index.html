@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app='graphite'>
+<head>
+<script src="js/angular.js"></script>
+<script src="js/angular-resource.min.js"></script>
+<script src="js/module.js"></script>
+<script src="js/angular.ui.bootstrap.js"></script>
+<script src="js/angular-routes.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui-1.10.4.custom.js"></script>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+</head>
+<body>
+	<h2>Search</h2>
+	<div ng-controller="SearchCtrl">
+		<input type="text" ng-model="selectedQuery"
+			typeahead="query for query in possibleQueries($viewValue)"
+			typeahead-editable="false"
+			ng-keypress="expand($event)" />
+		<hr/>
+		<div ng-view></div>
+	</div>
+</body>
+</html>
